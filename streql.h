@@ -20,8 +20,7 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR TH
 
 
 #if defined(__ARM_NEON) || defined(__ARM_NEON__)
-#define TRIPP_STREQL_SIMD_NOT_SUPPORTED
-// ARM isn't supported yet
+#define TRIPP_STREQL_USE_SIMD
 #elif defined(__SSE2__) || defined(_M_IX86) || defined( USE_SOFT_INTRINSICS) || defined(_M_X64)
 #define TRIPP_STREQL_USE_SIMD
 #include <immintrin.h>
