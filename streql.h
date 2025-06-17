@@ -19,13 +19,17 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR TH
 #define TR_STR_EQL_H
 
 
-#if defined(__ARM_NEON) || defined(__ARM_NEON__)
-#define TRIPP_STREQL_USE_SIMD
-#elif defined(__SSE2__) || defined(_M_IX86) || defined( USE_SOFT_INTRINSICS) || defined(_M_X64)
-#define TRIPP_STREQL_USE_SIMD
-#include <immintrin.h>
+
+#if defined(_MSC_VER)
+    #if defined(_M_X64) || (_M_IX86_FP >= 2)
+        #define TRIPP_STREQL_USE_SIMD
+    #endif
 #else
-#define TRIPP_STREQL_SIMD_NOT_SUPPORTED
+    #if defined(__SSE4_2__)
+        #define TRIPP_STREQL_USE_SIMD
+    #else
+        #define TRIPP_STREQL_SIMD_NOT_SUPPORTED
+    #endif
 #endif
 
 #include <stdint.h>
