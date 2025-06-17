@@ -4,9 +4,8 @@
 streql.h is a highly optimized C function to compare equality between two strings. It uses Intel's SIMD instructions if available to maximize perforance.
 
 <BR>
-<ins><B>Only use streql on values that are not known at compile time.</B></ins>
+<ins><B>Only use streql on values that are not known at compile time.</B></ins> - some C compilers will evaluate strcmp at compile time if it's comparing constant literals. This cannot be done with streql (yet)
 
-Note that some C compilers will evaluate strcmp at compile time if it's comparing constant literals. 
 | streql(SIMD) | streql(No SIMD) |
 | ------------- | ------------- |
 |   | Content Cell  |
