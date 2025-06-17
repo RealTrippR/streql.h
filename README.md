@@ -10,6 +10,6 @@ streql.h is a highly optimized C function to compare equality between two string
         Time comparison (milliseconds) @ 100 million iterations
 |String size| streql(SIMD)  | streql(No SIMD) | strneql(SIMD) | strcmp == 0 |
 |-------------| ------------- | -------------   | -------------    | ----------  |   
-| 16            | 1706          | 889            | 4565             | 3389        |
+| 16            | 1706          | 4565            | 889             | 3389        |
 | 25            | 1696          | 6706            | 1791             | 4918        |
-| 64            | 4180          | 3445            | 16328             | 12912        |
+| 64            | 4180          | 16328            | 3445             | 12912        |
