@@ -8,7 +8,7 @@ streql.h is a highly optimized C function to compare equality between two string
 <BR>
 
         Time comparison (milliseconds) @ 100 million iterations
-|String size| streql(SIMD)  | streql(No SIMD) | strneql(No SIMD) | strcmp == 0 |
+|String size| streql(SIMD)  | streql(No SIMD) | strneql(SIMD) | strcmp == 0 |
 |-------------| ------------- | -------------   | -------------    | ----------  |   
 | 16            | 1706          | 889            | 4565             | 3389        |
 | 25            | 1696          | 6706            | 1791             | 4918        |
